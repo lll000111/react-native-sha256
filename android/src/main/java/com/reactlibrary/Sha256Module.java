@@ -31,17 +31,14 @@ public class Sha256Module extends ReactContextBaseJavaModule {
   @ReactMethod
   public void sha256(final String toHash, Promise promise) {
       MessageDigest md = null;
+
       try {
           md = MessageDigest.getInstance("SHA-256");
           md.update(toHash.getBytes("UTF-8"));
           byte[] digest = md.digest();
           String hash = String.format("%064x", new java.math.BigInteger(1, digest));
           promise.resolve(hash);
-
-      } catch (NoSuchAlgorithmException e) {
-          e.printStackTrace();
-          promise.reject("sha256", e.getMessage());
-      } catch (UnsupportedEncodingException e) {
+      } catch (Exception e) {
           e.printStackTrace();
           promise.reject("sha256", e.getMessage());
       }

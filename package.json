@@ -22,9 +22,5 @@
   "author": "Hagen Huebel <hhuebel@itinance.com> (hhuebel@itinance.com)",
   "license": "MIT",
   "dependencies": {},
-  "devDependencies": {
-    "flow-bin": "0.28.0",
-    "react": "^15.4.2",
-    "react-native": "^0.40.0"
-  }
+  "devDependencies": {}
 }
